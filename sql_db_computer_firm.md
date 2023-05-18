@@ -1,8 +1,8 @@
-Схема БД состоит из четырех таблиц:
-**Product**(maker, model, type)
-**PC**(code, model, speed, ram, hd, cd, price)
-**Laptop**(code, model, speed, ram, hd, price, screen)
-**Printer**(code, model, color, type, price)
+Схема БД состоит из четырех таблиц:<br/>
+**Product** (maker, model, type)<br/>
+**PC** (code, model, speed, ram, hd, cd, price)<br/>
+**Laptop** (code, model, speed, ram, hd, price, screen)<br/>
+**Printer** (code, model, color, type, price)<br/>
 
 Таблица *Product* представляет производителя (maker), номер модели (model) и тип ('PC' - ПК, 'Laptop' - ПК-блокнот или 'Printer' - принтер).
 Предполагается, что номера моделей в таблице *Product* уникальны для всех производителей и типов продуктов. 
