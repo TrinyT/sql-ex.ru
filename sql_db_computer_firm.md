@@ -169,3 +169,32 @@ FROM pc;
 | AVG_speed |
 |-----------|
 |    608    |
+
+
+## Задание: 12
+	Найдите среднюю скорость ПК-блокнотов, цена которых превышает 1000 дол.
+```sql
+SELECT AVG(speed) AS AVG_speed
+FROM laptop
+WHERE price>1000;
+```
+| AVG_speed |
+|-----------|
+|    700    |
+
+
+## Задание: 13
+	Найдите среднюю скорость ПК, выпущенных производителем A.
+```sql
+	WITH tab AS (
+	SELECT speed FROM pc
+	JOIN Product
+	ON Product.model=pc.model
+	WHERE Product.maker = 'A'
+	)
+SELECT AVG(speed) AS AVG_speed
+FROM tab;
+```
+| AVG_speed |
+|-----------|
+|    606    |
