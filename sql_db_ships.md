@@ -30,3 +30,17 @@ WHERE Classes.numGuns>=10;
 |  North Carolina |  South Dakota   |    USA   |
 |  Tennessee      |  Tennessee      |    USA   |
 |  North Carolina |  Washington     |    USA   |
+
+
+## Задание: 31
+	Для классов кораблей, калибр орудий которых не менее 16 дюймов, укажите класс и страну.
+```sql
+SELECT class, country
+FROM Classes
+WHERE bore>=16;
+```
+| class |country|
+|-------|------------|
+|Iowa|USA| 
+|North Carolina|USA|
+|Yamato|Japan|
