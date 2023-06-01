@@ -44,3 +44,15 @@ WHERE bore>=16;
 |Iowa|USA| 
 |North Carolina|USA|
 |Yamato|Japan|
+
+
+## Задание: 33
+	Укажите корабли, потопленные в сражениях в Северной Атлантике (North Atlantic). Вывод: ship.
+```sql
+SELECT ship FROM Outcomes
+WHERE battle = 'North Atlantic' and result = 'sunk';
+```
+|ship|
+|----|
+|Bismarck| 
+|Hood|
