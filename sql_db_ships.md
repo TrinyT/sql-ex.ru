@@ -56,3 +56,58 @@ WHERE battle = 'North Atlantic' and result = 'sunk';
 |----|
 |Bismarck| 
 |Hood|
+
+## Задание: 42
+	Найдите названия кораблей, потопленных в сражениях, и название сражения, в котором они были потоплены.
+```sql
+SELECT ship, battle FROM Outcomes
+WHERE result = 'sunk';
+```
+| ship |battle|
+|-------|------------|
+|Bismarck|North Atlantic| 
+|Fuso|Surigao Strait|
+|Hood|North Atlantic|
+|Kirishima|Guadalcanal|
+|Schamhorst|North Cape|
+|Yamashiro|Surigao Strait|
+
+## Задание: 44
+	Найдите названия всех кораблей в базе данных, начинающихся с буквы R.
+```sql
+SELECT a.name 
+FROM (
+	SELECT Ships.name FROM Ships
+	UNION
+	SELECT Outcomes.ship FROM Outcomes) as a
+WHERE name LIKE 'R%'
+;
+```
+|name|
+|----|
+|Ramillies|
+|Renown|
+|Repulse|
+|Resolution|
+|Revenge|
+|Rodney|
+|Royal Oak|
+|Royal Sovereign|
+
+## Задание: 45
+	Найдите названия всех кораблей в базе данных, состоящие из трех и более слов (например, King George V).
+Считать, что слова в названиях разделяются единичными пробелами, и нет концевых пробелов.
+```sql
+SELECT a.name 
+FROM (
+	SELECT Ships.name FROM Ships
+	UNION
+	SELECT Outcomes.ship FROM Outcomes) as a
+WHERE name LIKE '% % %'
+;
+```
+|name|
+|----|
+|Duke of York|
+|King George V|
+|Prince of Wales|
